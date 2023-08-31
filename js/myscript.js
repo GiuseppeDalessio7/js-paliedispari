@@ -8,30 +8,51 @@ Dichiariamo chi ha vinto.*/
 
 
 let choiceEvenOrOdd = prompt('scegli pari o dispari')
-console.log(choiceEvenOrOdd);
+choiceEvenOrOdd = document.getElementById("choiceUser").innerHTML = choiceEvenOrOdd
+
 
 let choiceUserNumber = Number(prompt('inserisci un numero da 1 a 5'))
-console.log(choiceUserNumber);
+choiceUserNumber = document.getElementById("choiceNumber").innerHTML = choiceUserNumber
 
-const pcNumber = Math.floor(Math.random() * 5) + 1 ; 
-console.log(pcNumber);
+
+let pcNumber = generatoreNumeri();
+pcNumber = document.getElementById("generator").innerHTML = generatoreNumeri()
+// console.log('numero pc ' + pcNumber);
+
+function generatoreNumeri() {
+    return Math.floor(Math.random() * 5) + 1 ; 
+}
+
 
 function sommaNumeri(num1,num2) {
-    const somma = pcNumber + choiceUserNumber ; 
-    return console.log('la somma è ' + somma);
-            
+    const somma = num1 + num2 ; 
+    return somma;           
 }
 
-const somma = sommaNumeri(pcNumber, choiceUserNumber)
+let somma = sommaNumeri(pcNumber, choiceUserNumber)
+somma = document.getElementById("add").innerHTML = somma
+// console.log('La somma è ' + somma);
 
-function pari_dispari() {
+function pari_dispari(somma) {
     if (somma % 2 === 0){
-        console.log('la somma è pari');
+        return "pari";
     }else{
-        console.log('la somma è dispari')
+        return "dispari";
+        
     } 
-    return(console.log(somma));
+    
 }
+
+let evenorodd = document.getElementById("pariDispari").innerHTML = pari_dispari(somma)
+console.log(pari_dispari(somma));
+
+if(pari_dispari === choiceEvenOrOdd){
+    let resultGame = document.getElementById("resultChoice").innerHTML = 'You Win'   
+}else {
+    let resultGame = document.getElementById("resultChoice").innerHTML = 'You Lose'
+   
+}
+
 
 
 
