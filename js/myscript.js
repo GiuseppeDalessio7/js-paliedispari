@@ -109,8 +109,6 @@ function isPalindrome(word) {
     return false
 }
 
-//isPalindrome('cacca');
-//console.log(isPalindrome('otto'));
 
 const paliButton = document.getElementById('palindrome');
 const paliResultDom = document.getElementById('palindromeResult');
